@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Obedience Command</title>
+  <meta name="theme-color" content="#090b16" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Command" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="aurora"></div>
+  <main class="app-shell">
+    <section id="startScreen" class="screen active start-screen">
+      <button id="secretTap" class="secret-tap" aria-label="hidden editor access">◆</button>
+      <div class="brand-card glass">
+        <div class="sigil">∞</div>
+        <h1>Obedience<br><span>Command</span></h1>
+        <p class="tagline">A private two-player command tracker for tasks, rewards, forfeits, and beautifully organised chaos.</p>
+      </div>
+
+      <div class="setup-card glass">
+        <label>Husband name</label>
+        <input id="husbandName" type="text" placeholder="Rob" autocomplete="off" />
+        <label>Wife name</label>
+        <input id="wifeName" type="text" placeholder="Charlotte" autocomplete="off" />
+        <button id="startBtn" class="primary">Enter App</button>
+      </div>
+    </section>
+
+    <section id="portalScreen" class="screen">
+      <header class="topbar">
+        <div>
+          <small>Shared Command App</small>
+          <h2 id="portalTitle">Choose a section</h2>
+        </div>
+        <button id="portalSettingsBtn" class="icon-btn">⚙</button>
+      </header>
+
+      <div class="portal-grid">
+        <button id="husbandPortalBtn" class="portal-card husband-card">
+          <span>🛡️</span>
+          <strong id="husbandPortalName">Husband</strong>
+          <em>View duties, complete tasks, earn coins, claim rewards.</em>
+        </button>
+        <button id="wifePortalBtn" class="portal-card wife-card">
+          <span>👑</span>
+          <strong id="wifePortalName">Wife</strong>
+          <em>Assign commands, check progress, manage rewards and forfeits.</em>
+        </button>
+        <button id="monogamyPortalBtn" class="portal-card monogamy-card">
+          <span>🂡</span>
+          <strong>Monogamy</strong>
+          <em>A standalone random card game with tiers, turns, and editable husband/wife task decks.</em>
+        </button>
+      </div>
+
+      <div class="stats-grid role-stats">
+        <article class="stat-card glass"><small>Coins</small><strong id="portalCoinCount">0</strong><span>shared balance</span></article>
+        <article class="stat-card glass"><small>Streak</small><strong id="portalStreakCount">0</strong><span>active days</span></article>
+        <article class="stat-card glass"><small>Rank</small><strong id="portalRankName">Initiate</strong><span id="portalRankProgress">0 / 50 XP</span></article>
+      </div>
+    </section>
+
+    <section id="husbandScreen" class="screen">
+      <header class="topbar"><button class="toPortal icon-btn">←</button><div><small>Husband Section</small><h2 id="husbandTitle">Husband Dashboard</h2></div></header>
+      <section class="glass daily-panel role-hero husband-hero">
+        <div class="panel-heading">
+          <div><small>Current Command</small><h3 id="husbandFeaturedTitle">No command drawn</h3></div>
+          <button id="husbandDrawBtn" class="secondary">Draw Task</button>
+        </div>
+        <p id="husbandFeaturedText">Draw a task, complete it, then mark it done to earn coins.</p>
+        <div class="action-row">
+          <button id="husbandCompleteBtn" class="primary small">Completed + Coins</button>
+          <button id="husbandMissedBtn" class="danger small">Missed / Need Forfeit</button>
+        </div>
+      </section>
+
+      <nav class="hub-grid">
+        <button class="hub-card" data-go="tasksScreen"><span>📜</span><strong>My Tasks</strong><em>Complete duties & challenges</em></button>
+        <button class="hub-card" data-go="rewardsScreen"><span>💎</span><strong>Rewards</strong><em>Spend earned coins</em></button>
+        <button class="hub-card" data-go="knowledgeScreen"><span>📚</span><strong>Book</strong><em>Ideas and help</em></button>
+        <button class="hub-card" data-go="ledgerScreen"><span>📈</span><strong>Progress</strong><em>Coins, rank, and streak</em></button>
+      </nav>
+    </section>
+
+    <section id="wifeScreen" class="screen">
+      <header class="topbar"><button class="toPortal icon-btn">←</button><div><small>Wife Section</small><h2 id="wifeTitle">Wife Dashboard</h2></div></header>
+      <section class="glass daily-panel role-hero wife-hero">
+        <div class="panel-heading">
+          <div><small>Command Centre</small><h3 id="wifeFeaturedTitle">Ready to assign</h3></div>
+          <button id="wifeDrawBtn" class="secondary">Pick Command</button>
+        </div>
+        <p id="wifeFeaturedText">Pick a task for him, or open the hidden editor to adjust the entire app.</p>
+        <div class="action-row">
+          <button id="wifeApproveBtn" class="primary small">Approve Completion</button>
+          <button id="wifeForfeitBtn" class="danger small">Assign Forfeit</button>
+        </div>
+      </section>
+
+      <nav class="hub-grid">
+        <button class="hub-card" data-go="tasksScreen"><span>📜</span><strong>Task Bank</strong><em>See available commands</em></button>
+        <button class="hub-card" data-go="forfeitsScreen"><span>⚡</span><strong>Forfeits</strong><em>Consequence board</em></button>
+        <button class="hub-card" data-go="knowledgeScreen"><span>📚</span><strong>Book</strong><em>Challenge ideas & help</em></button>
+        <button class="hub-card" data-go="editorScreen"><span>🗝️</span><strong>Control Room</strong><em>Edit app content</em></button>
+      </nav>
+    </section>
+
+    <section id="monogamyScreen" class="screen monogamy-screen">
+      <header class="topbar"><button class="toPortal icon-btn">←</button><div><small>Standalone Game</small><h2>Monogamy</h2></div></header>
+      <section class="glass monogamy-board">
+        <div class="monogamy-top">
+          <div>
+            <small>Current Tier</small>
+            <h3 id="monogamyTierLabel">Tier 1 — Warm Up</h3>
+          </div>
+          <div class="tier-controls">
+            <button id="tierDownBtn" class="secondary small">−</button>
+            <button id="tierUpBtn" class="secondary small">+</button>
+          </div>
+        </div>
+        <p class="monogamy-rules">Tap flip card. The app chooses either the husband deck or wife deck at random. Whoever appears is in charge of the task shown.</p>
+
+        <div id="monogamyCard" class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-back">
+              <span>∞</span>
+              <strong>Tap to Flip</strong>
+              <em>Monogamy Card</em>
+            </div>
+            <div class="flip-card-face flip-card-front">
+              <small id="monogamyController">Awaiting card</small>
+              <h3 id="monogamyCardTitle">Ready?</h3>
+              <p id="monogamyCardText">Flip a card to choose who takes control of the next task.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-row monogamy-actions">
+          <button id="flipMonogamyBtn" class="primary small">Flip Random Card</button>
+          <button id="completeMonogamyBtn" class="secondary small">Task Done</button>
+          <button id="resetMonogamyBtn" class="danger small">Reset Card</button>
+        </div>
+      </section>
+
+      <section class="glass monogamy-status">
+        <article><small>Cards Flipped</small><strong id="monogamyRounds">0</strong></article>
+        <article><small>Last Controller</small><strong id="monogamyLastController">None</strong></article>
+        <article><small>Coins Bonus</small><strong id="monogamyBonus">+10</strong></article>
+      </section>
+
+      <nav class="hub-grid">
+        <button class="hub-card" data-go="monogamyDeckScreen"><span>🃏</span><strong>View Decks</strong><em>See tiered husband and wife cards</em></button>
+        <button class="hub-card" data-go="editorScreen"><span>🛠️</span><strong>Edit Cards</strong><em>Hidden control room</em></button>
+      </nav>
+    </section>
+
+    <section id="monogamyDeckScreen" class="screen list-screen">
+      <header class="topbar"><button class="backBtn icon-btn">←</button><div><small>Monogamy</small><h2>Tiered Decks</h2></div></header>
+      <div id="monogamyDeckList" class="card-list"></div>
+    </section>
+
+    <section id="ledgerScreen" class="screen list-screen">
+      <header class="topbar"><button class="backBtn icon-btn">←</button><div><small>Progress Ledger</small><h2>Stats</h2></div></header>
+      <div class="stats-grid stacked-stats">
+        <article class="stat-card glass"><small>Coins</small><strong id="coinCount">0</strong><span>earned from completed tasks</span></article>
+        <article class="stat-card glass"><small>Streak</small><strong id="streakCount">0</strong><span>days in command</span></article>
+        <article class="stat-card glass"><small>Rank</small><strong id="rankName">Initiate</strong><span id="rankProgress">0 / 50 XP</span></article>
+      </div>
+    </section>
+
+    <section id="tasksScreen" class="screen list-screen">
+      <header class="topbar"><button class="backBtn icon-btn">←</button><div><small>Command Log</small><h2>Tasks</h2></div></header>
+      <div id="taskList" class="card-list"></div>
+    </section>
+
+    <section id="rewardsScreen" class="screen list-screen">
+      <header class="topbar"><button class="backBtn icon-btn">←</button><div><small>Coin Shop</small><h2>Rewards</h2></div></header>
+      <div id="rewardList" class="card-list"></div>
+    </section>
+
+    <section id="forfeitsScreen" class="screen list-screen">
+      <header class="topbar"><button class="backBtn icon-btn">←</button><div><small>Consequence Vault</small><h2>Forfeits</h2></div></header>
+      <div id="forfeitList" class="card-list"></div>
+    </section>
+
+    <section id="knowledgeScreen" class="screen list-screen">
+      <header class="topbar"><button class="backBtn icon-btn">←</button><div><small>Index</small><h2>Book of Knowledge</h2></div></header>
+      <div class="knowledge-grid">
+        <button class="knowledge-tab active" data-tab="challengeIdeas">Challenge Ideas</button>
+        <button class="knowledge-tab" data-tab="forfeitIdeas">Forfeit Ideas</button>
+        <button class="knowledge-tab" data-tab="helpGuide">Help</button>
+      </div>
+      <div id="knowledgeContent" class="glass knowledge-content"></div>
+    </section>
+
+    <section id="editorScreen" class="screen editor-screen">
+      <header class="topbar"><button class="backBtn icon-btn">←</button><div><small>Hidden Control Room</small><h2>Editor</h2></div></header>
+      <div class="glass editor-help">
+        <strong>Edit on your PC:</strong> open <code>script.js</code>, find <code>defaultData</code>, and change the wording there before upload. You can also edit live below and export/import your settings.
+      </div>
+      <div class="editor-controls">
+        <button id="exportBtn" class="secondary">Export Save</button>
+        <label class="import-label secondary">Import Save<input id="importFile" type="file" accept="application/json"></label>
+        <button id="resetBtn" class="danger">Reset App</button>
+      </div>
+      <div class="editor-tabs">
+        <button class="editor-tab active" data-edit="tasks">Tasks</button>
+        <button class="editor-tab" data-edit="rewards">Rewards</button>
+        <button class="editor-tab" data-edit="forfeits">Forfeits</button>
+        <button class="editor-tab" data-edit="knowledge">Knowledge</button>
+        <button class="editor-tab" data-edit="monogamy">Monogamy Cards</button>
+      </div>
+      <div id="editorArea" class="editor-area"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
