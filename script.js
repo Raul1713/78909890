@@ -297,6 +297,15 @@ function resetMonogamyCard(){
   setText("monogamyCardTitle", "Ready?");
   setText("monogamyCardText", "Flip a card to choose who takes control of the next task.");
 }
+function resetMonogamyTier(){
+  app.monogamy.currentTier = 1;
+  app.monogamy.rounds = 0;
+  app.monogamy.lastController = "None";
+  saveApp();
+  resetMonogamyCard();
+  renderMonogamy();
+  showToast("Monogamy reset back to Tier 1.");
+}
 function changeTier(direction){
   const tiers=app.monogamy.tiers.map(t=>Number(t.tier)).sort((a,b)=>a-b);
   const current=Number(app.monogamy.currentTier||tiers[0]||1);
@@ -437,6 +446,7 @@ $("completeMonogamyBtn").onclick=completeMonogamyCard;
 $("resetMonogamyBtn").onclick=resetMonogamyCard;
 $("tierDownBtn").onclick=()=>changeTier(-1);
 $("tierUpBtn").onclick=()=>changeTier(1);
+$("resetMonogamyTierBtn").onclick = resetMonogamyTier;
 $("exportBtn").onclick=()=>{ const blob=new Blob([JSON.stringify(app,null,2)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="obedience-command-save.json"; a.click(); URL.revokeObjectURL(a.href); };
 $("importFile").onchange=e=>{ const file=e.target.files[0]; if(!file) return; const reader=new FileReader(); reader.onload=()=>{ try{ app=normaliseApp(JSON.parse(reader.result)); saveApp(); renderAll(); showToast("Save imported."); }catch{ showToast("Import failed. JSON looks wrong."); } }; reader.readAsText(file); };
 $("resetBtn").onclick=()=>{ if(confirm("Reset everything back to starter content?")){ app=clone(defaultData); saveApp(); currentFeatured=null; currentMonogamyCard=null; renderAll(); resetMonogamyCard(); showToast("Reset complete."); } };
