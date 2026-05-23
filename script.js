@@ -42,17 +42,19 @@ const defaultData = {
         name: "Warm Up",
         bonusCoins: 10,
         husbandCards: [
-          { title: "Husband Leads", text: "Husband chooses a light task or playful challenge for this round." },
-          { title: "Gentle Command", text: "Husband gives one simple instruction that can be completed straight away." },
+          { title: "Husband Leads", text: "Husband flip a coin, if its heads down your drink tails down a ltr of water." },
+          { title: "Gentle Command", text: "Husband give one simple instruction that can be completed straight away." },
 		  { title: "Husband Leads", text: "Husband feel your wife up from head to toe." },
           { title: "Pick the Pace", text: "Husband chooses what you wear for the rest of the night." },
 		 { title: "Pick the Pace", text: "Husband pin your wife against the wall, kiss her passionately while feeling her up." }
         ],
        wifeCards: [
   { title: "Wife Leads", text: "Wife gently tease your husbands cock." },
-  { title: "Queen’s Choice", text: "Wife tell your husband he cannot touch his own cock at all tonight, its yours tonight and yours alone." },
+  { title: "Queen’s Choice", text: "Wife tell your husband he cannot touch his own cock at all tonight, its yours tonight and yours alone extend it to a week if you want." },
   { title: "Wife Leads", text: "Wife Tell your husband to strip for the rest of the game." },
-  { title: "Mood Setter", text: "Wife decides if she plays with herself or tells her husband to play with himself." },
+   { title: "Tease and denial", text: "Wife Tell your husband sit down and use your feet to play with his cock." },
+  { title: "Mood Setter", text: "Wife decides if she plays with herself or with him." },
+  { title: "matriarchy", text: "Wife tell your husband for the rest of the evening he will sit down to pee so you dont need to worry about pee on the seat." },
   { title: "Wife Leads", text: "Wife spank your husband 10 times hard with whatever you like." }
 ]
       },
@@ -61,18 +63,21 @@ const defaultData = {
         name: "Getting Serious",
         bonusCoins: 15,
         husbandCards: [
-          { title: "Husband’s Rule", text: "Husband sets a temporary rule that lasts until the next card is flipped." },
+          { title: "Husband’s Rule", text: "Husband bend over and asked to be spanked." },
           { title: "Challenge Pick", text: "Husband tell your wife to play with your cock." },
           { title: "Double or Nothing", text: "Husband get your wife to kneel and suck your cock." },
+		  { title: "Double or Nothing", text: "Husband tell her to give you a small lap dance, no touching though so tie your hands behind your back." },
 		   { title: "Double or Nothing", text: "Husband get your wife to sit on your cock." }
 		  
         ],
         wifeCards: [
           { title: "Wife’s Rule", text: "Wife sets a temporary rule that lasts until the next card is flipped." },
-          { title: "Command Card", text: "Wife chooses one challenge from the agreed challenge list." },
-		  { title: "Command Card", text: "Wife play with your husbands cock and balls." },
+          { title: "Command Card", text: "Wife chooses one either recive oral or give oral." },
+		  { title: "Command Card", text: "Wife tie your husbands hands behind his back, sit him on a chair lube up his cock and tease him." },
           { title: "Inspection", text: "Wife choose a task for your husband to do." },
-		  { title: "Inspection", text: "Wife ask your husband to choose one, either go commando for a day or wear your underwear for a day, whatever he chooses do the next avalible day." }
+		  { title: "matriarchy", text: "Wife get a nipple pump, place it on your husband and twist, leave it on him for 5 minutes." },
+		  { title: "matriarchy", text: "Wife bend over, tell your husband to get your favorite dildo and use it on you as you pleasure yourself, tell him to lick your pussy afterwards." },
+		  { title: "matriarchy", text: "Wife ask your husband to choose one, either go commando for a day or wear your underwear for a day, whatever he chooses, do the next avalible day." }
         ]
       },
       {
@@ -82,7 +87,7 @@ const defaultData = {
         husbandCards: [
           { title: "Husband Takes Control", text: "Husband controls the next full round and chooses the task conditions." },
           { title: "Prize Round", text: "Husband names a reward that can be earned by completing the card properly." },
-		  { title: "Prize Round", text: "Husband bend your wife over and fuck her roll a dice thats how long for, if the numbers odd lick her pussy after." },
+		  { title: "Prize Round", text: "Husband bend your wife over and fuck her, but first roll a dice thats how long for, if the numbers odd lick her pussy after." },
           { title: "Commander Move", text: "Husband chooses a task, a time limit, and a success condition." },
 		  { title: "Commander Move", text: "Husband gets to spank your wife 10 times with whatever she chooses." },
 		  {title: "Devoted Oral Service", text: "Husband must please Wife with his mouth for a full 15 minutes in any position she chooses." },
@@ -106,7 +111,7 @@ const defaultData = {
   },
   knowledge: {
     challengeIdeas: [
-      "Create tiered tasks: easy, medium, hard, commander-level.",
+      "To long have men dominated women, now its your turn to dominate, so next time he wants his cock sucked say no my pussy comes first get that tongue out.",
       "Use weekly themes such as service week, kindness week, tidy-home week, or date-night week.",
       "Keep tasks clear and measurable so there’s no sneaky loophole nonsense.",
       "Add a few surprise commands that can be drawn at random."
